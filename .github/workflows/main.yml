@@ -1,0 +1,18 @@
+name: make
+
+on:
+    push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Install dependencies
+              run: sudo apt install -y gcc g++ cmake
+
+            - name: build
+              run: make -j
+ 
